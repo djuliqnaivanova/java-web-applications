@@ -23,7 +23,7 @@ public class WeatherController {
 		this.userService = userService;
 	}
 
-	@RequestMapping(value = "/forecast/{townName}", method = RequestMethod.GET)
+	@RequestMapping(value = "/forecast/{townName}", method = RequestMethod.GET, produces = "application/json")
 	public String forecast(@PathVariable(value = "townName") String townName, HttpServletRequest request)
 			throws Exception {
 		String townForecast = this.weatherForecastService.town(townName);
